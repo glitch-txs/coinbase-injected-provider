@@ -10,7 +10,7 @@ export const checkCoinbase = ()=>{
     let provider;
     if (window.coinbaseWalletExtension){
       provider = window.coinbaseWalletExtension
-    } else if (window.ethereum.providers?.length) {
+    } else if (window.ethereum?.providers?.length) {
       // edge case if MM and CBW are both installed
       window.ethereum.providers.forEach(async (p: any) => {
         if (p.isCoinbaseWallet) provider = p;
